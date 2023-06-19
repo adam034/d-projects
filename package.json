@@ -2,7 +2,9 @@
   "name": "@d-projects/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev:bot": "nx serve dibikin-gampang"
+  },
   "private": true,
   "dependencies": {
     "axios": "^1.0.0",
