@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "esModuleInterop": true,  
+    "esModuleInterop": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -18,6 +18,9 @@
     "paths": {
       "@d-projects/dibikin-gampang/connectors": [
         "libs/dibikin-gampang/connectors/src/index.ts"
+      ],
+      "@d-projects/dibikin-gampang/features/generate": [
+        "libs/dibikin-gampang/features/generate/src/index.ts"
       ],
       "@d-projects/dibikin-gampang/utils": [
         "libs/dibikin-gampang/utils/src/index.ts"

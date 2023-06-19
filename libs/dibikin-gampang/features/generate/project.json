@@ -1,0 +1,41 @@
+{
+  "name": "dibikin-gampang-features-generate",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dibikin-gampang/features/generate/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dibikin-gampang/features/generate",
+        "tsConfig": "libs/dibikin-gampang/features/generate/tsconfig.lib.json",
+        "packageJson": "libs/dibikin-gampang/features/generate/package.json",
+        "main": "libs/dibikin-gampang/features/generate/src/index.ts",
+        "assets": ["libs/dibikin-gampang/features/generate/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dibikin-gampang/features/generate/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/dibikin-gampang/features/generate/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
