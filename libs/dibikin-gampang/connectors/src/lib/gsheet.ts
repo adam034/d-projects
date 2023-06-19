@@ -1,6 +1,6 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 
-export async function gSheet(
+export async function gSheetConnector(
   sheetId: string,
   clientEmail: string,
   privateKey: string
