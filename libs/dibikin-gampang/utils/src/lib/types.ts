@@ -1,3 +1,5 @@
+import { Context, Scenes } from 'telegraf';
+
 export type Data = {
   kode_sub_kegiatan?: string;
   nama_sub_kegiatan?: string;
@@ -40,7 +42,28 @@ type Items = {
   jumlah: string;
   ket: string;
 };
+
 type TempData = {
   harga: number;
   jumlah: number;
 };
+
+type Update = any;
+
+type NarrowedContext<TBase extends Context, TType> = TBase & TType;
+
+export type CusContextCommand = NarrowedContext<
+  Context<Update>,
+  {
+    update_id: number;
+    scene: Scenes.SceneContextScene<any, Scenes.WizardSessionData>;
+  }
+>;
+
+export type CusWizardScene = NarrowedContext<
+  Context<Update>,
+  {
+    scene: Scenes.SceneContextScene<any, Scenes.WizardSessionData>;
+    wizard: Scenes.WizardContextWizard<any>;
+  }
+>;
