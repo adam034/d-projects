@@ -8,7 +8,7 @@ export async function authUser(
   const readData = path.join(ROOT_PATH, '/assets/users.json');
   const users: { id: number; role: string }[] = JSON.parse(
     await readFile(readData, 'utf-8')
-  );
+  ).users;
   const allowedUsers = users.filter((u) => u.id === userId);
   return allowedUsers;
 }

@@ -65,16 +65,5 @@ export async function generateFile(
       await ctx.scene.enter('generate');
     }
   });
-  bot.command('trial', async (ctx) => {
-    const credUser = await authUser(ctx.from.id);
-    if (!credUser.length) {
-      await ctx.reply(
-        `Hey ${ctx.from.username}, kamu tidak di ijinkan menggunakan layanan ini. Silahkan daftar terlebih dahulu`
-      );
-    }
-    await ctx.reply(
-      `Halo ${ctx.from.username}, terimakasih sudah melakukan pendaftaran. Mimin akan segera proses yah`
-    );
-  });
   return bot;
 }
