@@ -1,12 +1,14 @@
 import { Telegraf, Scenes, Context, session } from 'telegraf';
-import { loadDocument, convertToDocx } from '@d-projects/dibikin-gampang/utils';
+import {
+  loadDocument,
+  convertToDocx,
+  authUser,
+} from '@d-projects/dibikin-gampang/utils';
 import {
   CusContextCommand,
   CusWizardScene,
 } from '@d-projects/dibikin-gampang/utils';
 import * as fs from 'fs';
-
-const allowedUsers = [1331602825, 725153013, 1902022526];
 
 export async function generateFile(
   bot: Telegraf,
@@ -53,7 +55,8 @@ export async function generateFile(
   const stage = new Scenes.Stage([generateScene]);
   bot.use(stage.middleware());
   bot.command('generate', async (ctx: CusContextCommand) => {
-    if (!allowedUsers.includes(ctx.from.id)) {
+    const credUser = await authUser(ctx.from.id);
+    if (!credUser.length) {
       console.log(ctx.from);
       await ctx.reply(
         `Hey ${ctx.from.username}, kamu tidak di ijinkan menggunakan layanan ini. Silahkan daftar terlebih dahulu`
@@ -63,7 +66,12 @@ export async function generateFile(
     }
   });
   bot.command('trial', async (ctx) => {
-    console.log(ctx);
+    const credUser = await authUser(ctx.from.id);
+    if (!credUser.length) {
+      await ctx.reply(
+        `Hey ${ctx.from.username}, kamu tidak di ijinkan menggunakan layanan ini. Silahkan daftar terlebih dahulu`
+      );
+    }
     await ctx.reply(
       `Halo ${ctx.from.username}, terimakasih sudah melakukan pendaftaran. Mimin akan segera proses yah`
     );
