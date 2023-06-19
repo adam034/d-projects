@@ -4,7 +4,7 @@ export async function gSheet(
   sheetId: string,
   clientEmail: string,
   privateKey: string
-) {
+): Promise<GoogleSpreadsheet> {
   const document = new GoogleSpreadsheet(sheetId);
   await document.useServiceAccountAuth({
     client_email: clientEmail,
