@@ -22,6 +22,9 @@
       "@d-projects/dibikin-gampang/features/generate": [
         "libs/dibikin-gampang/features/generate/src/index.ts"
       ],
+      "@d-projects/dibikin-gampang/features/users": [
+        "libs/dibikin-gampang/features/users/src/index.ts"
+      ],
       "@d-projects/dibikin-gampang/utils": [
         "libs/dibikin-gampang/utils/src/index.ts"
       ]

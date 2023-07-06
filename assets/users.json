@@ -1,16 +1,1 @@
-{
-    "users": [
-        {
-            "id": 1331602825,
-            "role": "admin"
-        },
-        {
-            "id": 725153013,
-            "role": "admin"
-        },
-        {
-            "id": 1902022526,
-            "role": "admin"
-        }
-    ]
-}
+{"users":[{"id":1331602825,"role":"admin"},{"id":1902022526,"role":"admin"},{"id":725153013,"role":"guest"}]}
