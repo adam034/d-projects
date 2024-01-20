@@ -23,6 +23,9 @@ export type Data = {
   terbilang_tahun?: string;
   total_jumlah?: string;
   terbilang_total_jumlah?: string;
+  nama_bank?: string;
+  no_rekening?: string;
+  nama_pemilik_rekening?: string;
   items: Items[];
   temp?: TempData[];
 };
@@ -40,6 +43,7 @@ type Items = {
   satuan: string;
   harga: string;
   jumlah: string;
+  pagu: string;
   ket: string;
 };
 

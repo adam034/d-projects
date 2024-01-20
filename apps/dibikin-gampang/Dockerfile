@@ -11,10 +11,12 @@ ENV PORT=3000
 
 WORKDIR /app
 
-RUN addgroup --system dibikin-gampang && \
-          adduser --system -G dibikin-gampang dibikin-gampang
+COPY assets ./assets
+
+RUN addgroup --system dibikin-gampang && adduser --system -G dibikin-gampang dibikin-gampang
 
 COPY dist/apps/dibikin-gampang dibikin-gampang
+
 RUN chown -R dibikin-gampang:dibikin-gampang .
 
 # You can remove this install step if you build with `--bundle` option.
